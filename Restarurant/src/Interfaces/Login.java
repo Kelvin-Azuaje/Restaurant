@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Clases.TextPrompt;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,8 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        TextPrompt user = new TextPrompt("NOMBRE DE USUARIO", TxtUser);
+        TextPrompt contra = new TextPrompt("CONTRASEÑA", TxtClave);
     }
 
     /**
@@ -31,8 +34,8 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        TxtUser = new javax.swing.JTextField();
+        TxtClave = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -47,6 +50,10 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(239, 240, 242));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255), 2)));
 
+        TxtUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        TxtClave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 255));
         jLabel1.setText("Nombre de usuario:");
@@ -60,6 +67,11 @@ public class Login extends javax.swing.JFrame {
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Iconos/ic_vpn_key_128_28771.png"))); // NOI18N
         jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Iconos/ic_send_128_28719.png"))); // NOI18N
         jButton5.setContentAreaFilled(false);
@@ -99,8 +111,8 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TxtUser, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(TxtClave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(77, 77, 77))
         );
         jPanel1Layout.setVerticalGroup(
@@ -109,11 +121,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(81, 81, 81)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -161,6 +173,12 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Cambio_clave obj = new Cambio_clave();
+        obj.setVisible(true);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,6 +215,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField TxtClave;
+    private javax.swing.JTextField TxtUser;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -205,7 +225,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
