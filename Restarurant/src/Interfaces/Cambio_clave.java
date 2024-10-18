@@ -16,6 +16,7 @@ public class Cambio_clave extends javax.swing.JFrame {
      */
     public Cambio_clave() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
